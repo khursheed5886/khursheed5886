@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Minor project</title>
+    <!-- fontawesome link for icone -->
+  <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <!-- bootstrap link -->
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.fonts-style.com/">
+</head>
+<style>
+body{
+    /* background-color: ; */
+    /* background-image: url("smillyjunnu.jpg"); */
+    background-image: linear-gradient(rgb(249, 149, 0),white,rgb(4, 255, 0));
+}
+.container{
+    columns: 3;
+    column-gap: 10px;
+    row-gap:20px;
+}
+img{
+    width: 100%;
+    border: 2px solid rgb(7, 7, 7);
+    border-radius: 15px;
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: auto;
+    margin: auto;
+ 
+}
+.fa-brands{
+    color: rgb(7, 7, 7);
+    height: 10px;
+    padding-right: 10px;
+    font-size: 40px;
+    
+
+}
+h1{
+    font-size: 50px;
+}
+</style>
+</head>
+<body>
+    
+    <header align="center"><h1><b><i><u>𓂀 ℍ𝕚𝕤𝕥𝕠𝕣𝕚𝕔𝕒𝕝 𝕡𝕝𝕒𝕔𝕖𝕤 𝕚𝕟 𝕚𝕟𝕕𝕚𝕒 𓂀</u></i></b></h1></header>
+<div class="container">
+    <div class="item">
+        <a href="https://en.wikipedia.org/wiki/Taj_Mahal">
+        <img src=https://thumbs.dreamstime.com/b/taj-mahal-agra-india-morning-light-reflection-water-uttar-pradesh-108954918.jpg width="500px" height="500px"></a><h4>Taj Mahal,Agra</h4>
+    </div>
+    <div>
+        <a href="https://en.wikipedia.org/wiki/Charminar#:~:text=The%20Charminar%20(%20lit.,most%20recognised%20structures%20in%20India.">
+        <img src=https://timesofindia.indiatimes.com/thumb/msid-69146268,width-1200,height-900,resizemode-4/.jpg width="500px" height="500px"></a><h4>Charminar,Hyderabad</h4>
+    </div>
+    <div>
+        <a href="https://en.wikipedia.org/wiki/India_Gate">
+        <img src=https://static.trip101.com/paragraph_media/pictures/001/817/876/large/travel-4813658_1280.jpg?1583142928 width="500px" height="500px"></a><h4>India Gate,Delhi</h4>
+    </div>
+    <div>
+        <a href="https://en.wikipedia.org/wiki/Mysore_Palace">
+        <img src=https://s3.india.com/travel/wp-content/uploads/2016/02/Mysore-palace-7.jpg width="500px" height="500px"></a><h4>Mysore Palace, Karnataka</h4>
+    </div>
+    <div>
+        <a href="https://en.wikipedia.org/wiki/Hawa_Mahal">
+        <img src=https://static.vecteezy.com/system/resources/previews/002/856/313/large_2x/hawa-mahal-on-evening-jaipur-rajasthan-india-photo.jpg width="500px" height="500px"></a><h4>Hawa Mahal, Jaipur</h4>
+    </div>
+    <div>
+        <a href="https://en.wikipedia.org/wiki/Hampi">
+        <img src=https://www.worldatlas.com/r/w2560-q80/upload/ff/49/57/shutterstock-1509720656.jpg width="500px" height="500px"></a><h4>Hampi,Karnataka</h4>
+    </div>
+</div>
+<div align="center">
+    <audio controls>
+        <source src="https://pagalworld.nl/files/download/id/1372" type="audio/ogg">
+    </audio>
+    <footer><h2><u> Thank You Designed by KHURSHEED</u></h2></footer>
+    
+    <i class="fa-brands fa-instagram"></i><br>
+    <a href="https://www.instagram.com/khursheed.official/" color="sky blue">𝖈𝖑𝖎𝖈𝖐 𝖍𝖊𝖗𝖊</a><hr>
+    <i style="font-size: 40px;">꧁𓊈𒆜🅼🅳 🅺🅷🆄🆁🆂🅷🅴🅴🅳𒆜𓊉꧂</i>
+</div>
+</body>
+</html>
