@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>weather app</title>
+    <script src="./sc.js" defer></script>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: black;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+}
+.card {
+    background-image: url(https://images.pexels.com/photos/216596/pexels-photo-216596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    color: black;
+    border-color: white;
+    border: 2px solid black;
+    padding: 2em;
+    border-radius: 20px;
+    max-width: 400px;
+    max-height: 500px;
+    width: 100%;
+}
+
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 41px;
+    width: 44px;
+    outline: none;
+    /* background: #7c7c7c2b; */
+    /* color: white; */
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 100px);
+}
+h1.temp {
+    margin: 0px;
+    margin-bottom: 0.4em;
+}
+.description {
+    text-transform: capitalize;
+    margin-left: 10px;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.weather.loading{
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+.weather.loading::after{
+    visibility: visible;
+    content:"Loading........";
+    color: black;
+    position: absolute;
+    top: 0;
+    left:20px;
+
+}
+    </style>
+</head>
+<body>
+    <!--I display all details inside the card-->
+    <div class="card">
+
+        <div class="search box">
+            <input type="text" class="search-bar" placeholder="Enter a city">
+            <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg></button>
+         </div>
+
+         <div class="weather loading">
+            <h1 class="city">weather in Rayadurg</h1>
+              <h1 class="temp">24°c</h1>
+              <div class="flex">
+
+                <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="" class="icon" />
+            <div class="description">sunny</div>
+              </div>
+            <div class="humidity">Humidity: 44%</div>
+            <div class="wind">wind speed: 5.4 km/h</div>
+
+         </div>
+
+    </div>
+    <div>
+        <script>
+            let weather={
+    "apiKey":"70521a3125427012ba40c745a2f8bd98",
+    fetchWeather:function (city){
+        fetch(
+            "http://api.openweathermap.org/data/2.5/weather?q=" 
+        + city
+        + "&units=metric&APPID="
+         + this.apiKey
+         )
+        .then((response) => response.json())
+        .then((data) => this.displayWeather(data));
+    },
+    displayWeather:function(data){
+        const{ name} =data;
+        const { icon,description}=data.weather[0];
+        const { temp,humidity}=data.main;
+        const { speed}=data.wind;
+      //  console.log(name,icon,description,temp,humidity,speed);
+        document.querySelector(".city").innerText= " Weather in " + name;
+        document.querySelector(".icon").src="http://openweathermap.org/img/wn/"+ icon + ".png";
+        document.querySelector(".description").innerText=description;
+        document.querySelector(".temp").innerText=temp  + "°C" ;
+        document.querySelector(".humidity").innerText="Humidity: " + humidity +"%";
+        document.querySelector(".wind").innerText="Wind speed: " + speed + "km/h";
+        document.querySelector(".weather").classList.remove("loading");
+        document.body.style.backgroundImage="url('https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"+ name +"')"
+
+
+
+    },
+    search:function(){
+       this.fetchWeather( document.querySelector(".search-bar").value)
+    }
+};
+document.querySelector(".search button").addEventListener("click",function(){
+    weather.search();
+
+});
+document.querySelector(".search-bar").addEventListener("keyup",function(event){
+    if(event.key=="Enter"){
+        weather.search();
+
+    }
+
+});
+weather.fetchWeather("Rayadurg");
+        </script>
+    </div>
+</body>
+</html>
